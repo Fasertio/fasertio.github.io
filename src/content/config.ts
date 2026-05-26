@@ -6,7 +6,7 @@ const postsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.string(),
-    category: z.enum(['tech', 'cybersecurity', 'ai', 'domotica']),
+    category: z.enum(['tech', 'cybersecurity', 'ai', 'domotica', 'stampa 3D']),
     tags: z.array(z.string()).optional(),
     featured: z.boolean().optional().default(false),
     image: z.string().optional(),
