@@ -2,11 +2,6 @@ backend:
   name: github
   repo: fasertio/fasertio.github.io
   branch: main
-  #base_url: https://sveltia-cms-auth.fasertio41.workers.dev  # optional OAuth proxy
-
-# Per GitHub Pages senza Netlify, usa uno dei seguenti:
-# - Sveltia CMS Auth (Cloudflare Worker) 
-# - oppure rimuovi base_url e usa l'auth nativa con Personal Access Token
 
 media_folder: "public/images"
 public_folder: "/images"
