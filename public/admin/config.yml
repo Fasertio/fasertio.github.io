@@ -1,0 +1,70 @@
+backend:
+  name: github
+  repo: fasertio/fasertio.github.io
+  branch: main
+  base_url: https://sveltia-cms-auth.your-worker.workers.dev  # optional OAuth proxy
+
+# Per GitHub Pages senza Netlify, usa uno dei seguenti:
+# - Sveltia CMS Auth (Cloudflare Worker) 
+# - oppure rimuovi base_url e usa l'auth nativa con Personal Access Token
+
+media_folder: "public/images"
+public_folder: "/images"
+
+site_url: https://yourusername.github.io
+
+collections:
+  - name: "posts"
+    label: "Articoli"
+    folder: "src/content/posts"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - label: "Titolo"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "Descrizione"
+        name: "description"
+        widget: "text"
+        required: true
+        hint: "Breve descrizione dell'articolo (max 160 caratteri)"
+      - label: "Data di pubblicazione"
+        name: "pubDate"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+        required: true
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Tech", value: "tech" }
+          - { label: "Cybersecurity", value: "cybersecurity" }
+          - { label: "AI", value: "ai" }
+          - { label: "Domotica", value: "domotica" }
+        required: true
+      - label: "Tag"
+        name: "tags"
+        widget: "list"
+        required: false
+        hint: "Tag separati da virgola"
+      - label: "In evidenza"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        required: false
+      - label: "Immagine copertina"
+        name: "image"
+        widget: "image"
+        required: false
+        allow_multiple: false
+      - label: "Contenuto"
+        name: "body"
+        widget: "markdown"
+        required: true
+        hint: "Scrivi il corpo dell'articolo in Markdown"
